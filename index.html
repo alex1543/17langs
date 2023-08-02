@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+        <meta charset="utf-8" />
+        <title>17+ языков программирования для работы с MySQL (MariaDB)</title>
+    </head>
+<style>
+
+body {
+	font-family: sans-serif;
+	text-align: center;
+}
+table {
+	width: 93%;
+	margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+tr:nth-child(odd) { 
+	background: #f5f5f5; 
+}
+tr:nth-child(even) { 
+	background: #a39579; 
+}
+tr:first-child { 
+	background: #f5c7a4;
+	font-weight: bold;
+}
+tr {
+	opacity: 0.77;
+}
+tr:nth-child(n+2):hover {
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	background: #bbbfc0;
+}
+td {
+	padding: 5px;
+    position: relative;
+    border: 1px solid #333;
+    height: 20px;
+}
+td:first-child {
+	width: 35px;
+	text-align: center;
+}
+h1, h1 a, h1 a:visited {
+	color: #777bb3;
+    background: #fff;
+	font-size: 30px;
+	font-family: Roboto, Geneva, Arial, Helvetica, sans-serif;
+}
+h1 a:hover {
+	color: #9295c2;
+}
+a {
+	text-decoration: none;
+}
+label {
+	font-size: 16px;
+	text-decoration: underline;
+	margin-left: 5px;
+}
+div {
+	display: contents;
+    font-size: 21px;
+    font-weight: bold;
+}
+input[type="submit"] {
+	cursor: pointer;
+}
+input[type="text"] {
+	font-style: italic;
+}
+
+aside {
+	width: 250px;
+    float: left;
+}
+
+ul {
+	margin: 0px;
+    padding: 0px;
+}
+li{
+  list-style-type: none;
+}
+
+li a{
+  display: block;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  margin: 5px;
+}
+
+li a span{
+  position: relative;
+  z-index: 2;
+}
+
+li a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #777bb3;
+  transition: all .35s;
+}
+
+li a:hover{
+  color: #fff;
+}
+
+li a:hover:after{
+  width: 100%;
+}
+
+article {
+	display: inline-block;
+	width: calc(100% - 250px);
+    height: 792px;
+
+}
+iframe {
+	width: 100%;
+    height: 100%;
+	border: 1px solid #333;
+	margin-top: 5px;
+	background: ghostwhite;
+}
+
+footer {
+	float: right;
+	font-style: italic;
+	font-size: 12px;
+    color: darkgray;
+	margin-right: 30px;
+}
+footer:hover {
+	color: black;
+}
+textarea {
+    width: calc(100% - 9px);
+    height: 250px;
+	margin-left: 5px;
+	font-size: 15px;
+    /*font-family: lucida console;*/
+	background: ghostwhite;
+}
+textarea:hover {
+	font-style: italic;
+	background: white;
+}
+</style>
+    <body>
+
+	<header>
+        <h1><a href="index.html">17+ programming languages for working with MySQL (MariaDB)</a></h1>
+	</header>
+	
+	<aside>
+		<nav>
+		<ul>
+			<li><a href="http://localhost:8081" target="if"><span>PHP</span></a></li>
+			<li><a href="http://localhost:8082" target="if"><span>Perl</span></a></li>
+			<li><a href="http://localhost:8083" target="if"><span>Python</span></a></li>
+			<li><a href="http://localhost:8084" target="if"><span>Go (Golang)</span></a></li>
+			<li><a href="http://localhost:8085" target="if"><span>Dart</span></a></li>
+			<li><a href="http://localhost:8086" target="if"><span>Node.js</span></a></li>
+			<li><a href="http://localhost:8087" target="if"><span>Ruby</span></a></li>
+			<li><a href="http://localhost:8088" target="if"><span>Elixir</span></a></li>
+			<li><a href="http://localhost:8089" target="if"><span>Lua</span></a></li>
+			<li><a href="http://localhost:8090" target="if"><span>Swift</span></a></li>
+			<li><a href="http://localhost:8091" target="if"><span>Java</span></a></li>
+			<li><a href="http://localhost:8092" target="if"><span>Rust</span></a></li>
+			<li><a href="http://localhost:8093" target="if"><span>C#</span></a></li>
+			<li><a href="http://localhost:8094" target="if"><span>FreePascal</span></a></li>
+			<li><a href="http://localhost:8095" target="if"><span>C (GCC)</span></a></li>
+			<li><a href="http://localhost:8096" target="if"><span>D (D lang)</span></a></li>
+			<li><a href="http://localhost:8097" target="if"><span>R (R lang)</span></a></li>		
+		</ul>
+		</nav>
+	</aside>
+
+	<article>
+		<iframe name="if" title="Выберите слева из списка.">&nbsp;</iframe>
+	</article>
+
+	<textarea>
+-- Creation of a test base...
+
+CREATE DATABASE test;
+
+USE test;
+
+CREATE TABLE files (
+  id_file int(11) NOT NULL,
+  id_my int(11) NOT NULL,
+  description text NOT NULL,
+  name_origin text NOT NULL,
+  path text NOT NULL,
+  date_upload text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+
+INSERT INTO files (id_file, id_my, description, name_origin, path, date_upload) VALUES
+(16, 17, 'Закачка из менеджера', 'test file 1.pdf', 'files/test_file1.pdf', '31-03-2023  20:07:59');
+
+CREATE TABLE myarttable (
+  id int(11) NOT NULL,
+  text text NOT NULL,
+  description text NOT NULL,
+  keywords text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+
+INSERT INTO myarttable (id, text, description, keywords) VALUES
+(17, 'Baranov', 'Engeneer', 'Ivanov'),
+(20, 'Fedorov', 'Cpp, Delphi, PHP, JS', '3t'),
+(92, 'Daniel', 'Artist', 'Theater Saturday'),
+(93, 'Andrew', 'Poet', 'First Electrotechnical University'),
+(94, 'Nikita', 'Student', 'Technological Institute'),
+(95, 'Ilya', 'Salesman', 'Hypermarket'),
+(96, 'Matvey', 'Programmer', 'Metropolitan College'),
+(97, 'Fedor', 'Loader', 'St. Petersburg State University'),
+(98, 'Ivan', 'Student', 'LETI'),
+(99, 'Alexey', 'Engineer', 'ITMO');
+
+ALTER TABLE files
+  ADD PRIMARY KEY (id_file),
+  ADD KEY id_my (id_my);
+
+ALTER TABLE myarttable
+  ADD PRIMARY KEY (id);
+
+ALTER TABLE files
+  MODIFY id_file int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+ALTER TABLE myarttable
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+ALTER TABLE files
+  ADD CONSTRAINT files_ibfk_1 FOREIGN KEY (id_my) REFERENCES myarttable (id);
+
+	</textarea>
+
+	<footer>Практика БД, Университет ИТМО. <br />&copy; 2023 Alexey Subbotin</footer>
+
+    </body>
+</html>
